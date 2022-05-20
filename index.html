@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess board in JS</title>
+    <style>
+        * {
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 80px;
+            text-shadow: 2px 2px gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chess board in JS</h1>
+    |<script>
+        for (let i = 0; i < 8; i++) {
+            const rowBox = document.createElement("div");
+            rowBox.setAttribute("id", `rowBox`);
+            document.getElementById("rowBox");
+            document.body.appendChild(rowBox);
+            rowBox.style.width = "800px";
+            rowBox.style.height = "100px";
+            rowBox.style.display = "flex";
+            rowBox.style.flexDirection = "row";
+            if (i % 2 == 0) {
+                rowBox.style.backgroundColor = "white";
+            } else {
+                rowBox.style.backgroundColor = "black";
+            }
+
+            for (let x = 0; x < 8; x++) {
+                const box = document.createElement("div");
+                box.setAttribute("id", "box");
+                document.getElementById("box");
+                rowBox.appendChild(box);
+                box.style.width = "100px";
+                box.style.height = "99px";
+                box.style.border = "1px solid black";
+                if (i % 2 == 0 && x % 2 !== 0) {
+                    box.style.backgroundColor = "white";
+                } else if (i % 2 == 0 && x % 2 == 0) {
+                    box.style.backgroundColor = "black";
+                } else if (i % 2 !== 0 && x % 2 == 0) {
+                    box.style.backgroundColor = "white";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
